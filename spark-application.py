@@ -20,4 +20,4 @@ df = spark.read.format("kafka") \
     .selectExpr("CAST(value AS STRING)")\
     .where(col("value").isNotNull())
 
-print(df.count())
+print(f"Number of messages: {df.count()}")
