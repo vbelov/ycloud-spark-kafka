@@ -83,12 +83,6 @@ resource "yandex_mdb_kafka_cluster" spark-kafka {
     }
   }
 
-  topic {
-    name = "topic1"
-    partitions         = 3
-    replication_factor = 3
-  }
-
   user {
     name     = "admin"
     password = random_password.admin_password.result
@@ -97,6 +91,13 @@ resource "yandex_mdb_kafka_cluster" spark-kafka {
       role = "ACCESS_ROLE_ADMIN"
     }
   }
+}
+
+resource "yandex_mdb_kafka_topic" topic1 {
+  cluster_id         = yandex_mdb_kafka_cluster.spark-kafka.id
+  name               = "topic1"
+  partitions         = 3
+  replication_factor = 3
 }
 
 resource "yandex_iam_service_account" "dataproc-sa" {
