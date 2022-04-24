@@ -1,0 +1,3 @@
+BOOTSTRAP_SERVERS="${bootstrap_servers}"
+ADMIN_PASSWORD=${admin_password}
+BUCKET_NAME=${bucket_name}
