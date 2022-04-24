@@ -1,4 +1,5 @@
 .idea
 .terraform*
+populate_kafka_env.list
 venv
 terraform.tfstate*
